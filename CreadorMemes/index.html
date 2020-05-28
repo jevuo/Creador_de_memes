@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Librerías necesarias -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./js/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="./js/script1.js"></script>
+    <script src="./js/app.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./librerias/fontawesome/css/all.min.css">
+    <!-- Color picker stuff-->
+    <link rel="stylesheet" href="https://unpkg.com/huebee@2/dist/huebee.min.css">
+    <script src="https://unpkg.com/huebee@2/dist/huebee.pkgd.min.js"></script>
+    <!-- Color picker stuff-->
+    <title>Mi propio meme</title>
+</head>
+
+<body>
+
+    <header>
+        <div id="app">
+            <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+                <div class="container">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item mr-5 mb-2">
+                            <a href="#app">
+                                <img title="Ir a inicio" src="./img/logomemes.png" alt="Logo MiPropioMeme.com"
+                                    class="responsive">
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="mr-5 mb-2">
+                            <p>LA MEJOR WEB DE CREACIÓN DE MEMES QUE ENCONTRARÁS</p>
+                        </li>
+                        
+                    </ul>
+                    <ul>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div id="app">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm" id="navbar">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <form class="form-inline" role="search">
+                        <!-- Left Side Of Navbar -->
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item mr-3 mb-2">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Escribe Imagen a buscar" class="form-control col" id="inFoto">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" title="Buscar imagen" type="button"
+                                            id="buscar">Buscar</button>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="nav-item mr-3 mb-2">
+
+                                <button type='button' title="Color de fuente" class='edit btn btn-primary color'
+                                    id="color"><i class="fas fa-palette"></i></button>
+                            </li>
+                            <li class="nav-item mr-3 mb-2">
+                                <div class="input-group">
+                                    <input type="number" placeholder="0" class="form-control col-3" id="tamano">
+                                    <span class="input-group-btn">
+                                        <button type='button' title="Tamaño de fuente"
+                                            class='btamano btn btn-primary'><i class="fas fa-text-height"></i></button>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="nav-item mr-3 mb-2">
+                                <label for="estilos" class="estilos  mr-3 mb-2" id="estilos">Estilos:</label>
+                            </li>
+                            <li class="nav-item mr-3 mb-2">
+                                <button type='button' title="Fuente en negrita" class='btn btn-primary negrita'
+                                    id="negrita"><i class="fas fa-bold"></i></button>
+                                <button type='button' title="Fuente cursiva" class='btn btn-primary cursiva'
+                                    id="cursiva"><i class="fas fa-italic"></i></button>
+                                <button type='button' title="Contorno" class='btn btn-primary borde' id="borde"><i
+                                        class="fab fa-contao"></i></button>
+                                <button type='button' title="Color contorno" class='btn btn-primary colorb'
+                                    id="colorb"><i class="fas fa-paint-roller"></i></button>
+                                <button type='button' title="Gorsor contorno" class='btn btn-primary' id="grosorc"><i
+                                        class="fas fa-text-width"></i></button>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="form-row" id="textArea">
+        <div class="col" id="cabTexta">
+            <label class="col-form-label col-form-label-lg">Introducción de texto</label>
+            <div class="form-row">
+                <div class="col">
+                    <textarea class="form-control parrafoTextArea" placeholder="Introduce el texto para tu meme"
+                        id="input-parrafo1"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div id="meme">
+        <div id="img-meme" class="responsive">
+            <div id="texto-meme">
+                <p class="parrafo" id="parrafo1"></p>
+            </div>
+        </div>
+    </div>
+
+    <section id="galeria" hidden="true" class="responsive">
+        <div class="row">
+            <div id="content" class="col-lg-12">
+                <div id="carrusel">
+                    <a href="#" class="izquierda"><img src="img/izquierda.png" title="Ir a izquierda" alt="flecha izq"
+                            class="izq" /></a>
+                    <a href="#" class="derecha"><img src="img/derecha.png" title="Ir a derecha" alt="flecha der"
+                            class="der" /></a>
+                    <div class="carrusel">
+                        <div class="fotos" id="fotos">
+                            <input type="image" title="" alt="" src="" class="foto" id="foto0">
+                        </div>
+                        <div class="fotos" id="fotos">
+                            <input type="image" title="" alt="" src="" class="foto" id="foto1">
+                        </div>
+                        <div class="fotos" id="fotos">
+                            <input type="image" title="" alt="" src="" class="foto" id="foto2">
+                        </div>
+                        <div class="fotos" id="fotos">
+                            <input type="image" title="" alt="" src="" class="foto" id="foto3">
+                        </div>
+                        <div class="fotos" id="fotos">
+                            <input type="image" title="" alt="" src="" class="foto" id="foto4">
+                        </div>
+                        <div class="fotos" id="fotos">
+                            <input type="image" title="" alt="" src="" class="foto" id="foto5">
+                        </div>
+                        <div class="fotos" id="fotos">
+                            <input type="image" title="" alt="" src="" class="foto" id="foto6">
+                        </div>
+                        <div class="fotos" id="fotos">
+                            <input type="image" title="" alt="" src="" class="foto" id="foto7">
+                        </div>
+                        <div class="fotos" id="fotos">
+                            <input type="image" title="" alt="" src="" class="foto" id="foto8">
+                        </div>
+                        <div class="fotos" id="fotos">
+                            <input type="image" title="" alt="" src="" class="foto" id="foto9">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="divaux" class="responsive"></div>
+    <footer class="footer bg-dark">
+        <div id="pie">
+            <div class="form-row">
+                <div class="col">
+                    <span> Creado por Jesús Villarejo Lozano</span>
+                </div>
+                <div class="col">
+                    <h6>Comparte!</h6>
+                    <script type="text/javascript"
+                        src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4ecc1a47193e29e4"
+                        async="async"></script>
+                    <div class="addthis_sharing_toolbox"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
